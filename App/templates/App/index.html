@@ -1,0 +1,96 @@
+{% extends 'App/base.html'%}
+{% load static %}
+
+
+{% block body %}
+<div class="uk-container">
+    <h1>CrypyoTracker Server Controller</h1>
+    <hr>
+
+    <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
+        <div>
+            <div class="uk-card uk-card-default uk-card-body" style="border-radius:30px">
+                <img src="{% static 'App/bitcoin2.png' %}" uk-img>
+                <hr>
+                <div class="uk-container">
+                    <h1 style="text-align:center">BitCoin</h1>
+                    <hr>
+                    <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
+                        <div>
+                            <a href="" class="uk-icon-button" uk-icon="play-circle"></a>
+                        </div>
+                        <div>
+                            <a href="" class="uk-icon-button" uk-icon="ban"></a>
+                        </div>
+                        <div>
+                            <a href="" class="uk-icon-button" uk-icon="refresh"></a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div>
+            <div class="uk-card uk-card-default uk-card-body" style="border-radius:30px">
+                 <img src="{% static 'App/etherium_img.png' %}" uk-img>
+                <hr>
+                <div class="uk-container">
+                    <h1 style="text-align:center">Etherium</h1>
+                    <hr>
+                    <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
+                        <form method="post">{% csrf_token %}
+                        <div>
+                            <input type="hidden" name="start_eth_server" value = "start_eth">
+                            <button href="" type="submit" class="uk-icon-button" uk-icon="play-circle"></button>
+                        </div>
+                        </form>
+                         <form method="post">{% csrf_token %}
+                        <div>
+                            <input type="hidden" name="stop_eth_server" value = "stop_eth">
+                            <button href="" type="submit" class="uk-icon-button" uk-icon="ban"></button>
+                        </div>
+                         </form>
+                         <form method="post">{% csrf_token %}
+                        <div>
+                            <input type="hidden" name="refresh_btc_server">
+                            <button href="" type="submit" class="uk-icon-button" uk-icon="refresh"></button>
+                        </div>
+                         </form>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div>
+            <div class="uk-card uk-card-default uk-card-body" style="border-radius:30px">
+                 <img src="{% static 'App/dogecoin.png' %}" uk-img>
+                <hr>
+                <div class="uk-container">
+                    <h1 style="text-align:center">DogeCoin</h1>
+                    <hr>
+                    <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
+                        <div>
+                            <a href="" class="uk-icon-button" uk-icon="play-circle"></a>
+                        </div>
+                        <div>
+                            <a href="" class="uk-icon-button" uk-icon="ban"></a>
+                        </div>
+                        <div>
+                            <a href="" class="uk-icon-button" uk-icon="refresh"></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

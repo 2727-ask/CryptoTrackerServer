@@ -22,12 +22,11 @@ def base(request):
 
 def index(request):
     if request.method == "POST":
-
-
-        eth_server_start = request.POST.get('start_eth_server','')
         global eth_server_start
-        eth_server_stop = request.POST.get('stop_eth_server','')
+        eth_server_start = request.POST.get('start_eth_server','')
         global eth_server_stop
+        eth_server_stop = request.POST.get('stop_eth_server','')
+
 
 
 
@@ -51,7 +50,7 @@ def startEthServer():
 
 
 
-class StartServer:
+class StartServer():
     def __init__(self,coin_name,):
         self.coin_name = coin_name
 
@@ -68,6 +67,3 @@ class StartServer:
             print('data_saved')
             time.sleep(60)
 
-if(eth_server_start == 'start' and not eth_server_stop):
-    while(eth_server_stop!="stop"):
-        eth_server = StartServer('ETH')
